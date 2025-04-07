@@ -11,15 +11,15 @@
 
 
 / {
+    &lt {
+        quick-tap-ms = <175>;
+    };
+
     chosen {
         zmk,physical-layout = &foostan_corne_5col_layout;
     };
 
     behaviors {
-        &lt {
-            quick-tap-ms = <175>;
-        };
-
         hml: home_row_mod_left {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
