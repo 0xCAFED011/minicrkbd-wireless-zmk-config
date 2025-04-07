@@ -10,11 +10,11 @@
 
 
 
-/ {
-    &lt {
-        quick-tap-ms = <175>;
-    };
+&lt {
+    quick-tap-ms = <175>;
+};
 
+/ {
     chosen {
         zmk,physical-layout = &foostan_corne_5col_layout;
     };
