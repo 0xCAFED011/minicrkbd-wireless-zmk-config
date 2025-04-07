@@ -16,7 +16,9 @@
     };
 
     behaviors {
-        mylt = <&lt>;
+        &lt {
+            quick-tap-ms = <175>;
+        };
 
         hml: home_row_mod_left {
             compatible = "zmk,behavior-hold-tap";
