@@ -76,7 +76,7 @@
             navigation_layer {
                 display-name = "Navigation";
                 bindings = <
-    &none     &none    &none    &none     &none    &kp HOME &kp PGDN &kp PGUP &END      &none
+    &none     &none    &none    &none     &none    &kp HOME &kp PGDN &kp PGUP &kp END   &none
     &kp LCTRL &kp LALT &kp LGUI &kp LSHFT &none    &kp LEFT &kp DOWN &kp UP   &kp RIGHT &none
     &none     &none    &none    &none     &none    &none    &none    &none    &none     &none
                        &none    &none     &none    &none    &none    &none
