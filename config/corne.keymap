@@ -23,7 +23,7 @@
             tapping-term-ms = <200>;
             bindings = <&mo>, <&kp>;
             display-name = "Layer-Tap";
-			quick-tap-ms = <175>
+			quick-tap-ms = <175>;
 		};
 		
         hml: home_row_mod_left {
