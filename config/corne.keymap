@@ -46,7 +46,7 @@
             #binding-cells = <2>;
             flavor = "balanced";
             require-prior-idle-ms = <HRM_PRIOR_IDLE>;
-            tapping-term-ms = <HRM_TAP_TERM>;
+            tapping-term-ms = <HRM_TAPPING_TERM>;
             quick-tap-ms = <QUICK_TAP_TERM>;
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <
