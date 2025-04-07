@@ -16,7 +16,7 @@
     };
 
     behaviors {
-        lt {
+        &lt {
             quick-tap-ms = <175>;
         };
 
