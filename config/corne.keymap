@@ -84,7 +84,12 @@
             };
 
             other_layer {
-                status = "reserved";
+                bindings = <
+    &none &none &none &none &none    &none &none &none &none &none
+    &none &none &none &none &none    &none &none &none &none &none
+    &none &none &none &none &none    &none &none &none &none &none
+                &none &none &none    &none &none &none
+                >
             };
 
             media_layer {
@@ -105,10 +110,6 @@
     &kp F1 &kp F2  &kp F3  &kp F4  &none    &none &none     &none    &none    &none
                        &none &none &none    &none &none &none
                 >;
-            };
-
-            final_layer {
-                status = "reserved";
             };
         };
     };
