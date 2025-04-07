@@ -48,8 +48,7 @@
 			>; // List of keys on the left side of the keyboard
             hold-trigger-on-release;
         };
-    };
-    };
+
         keymap {
                 compatible = "zmk,keymap";
 
