@@ -14,8 +14,6 @@
 #define HRM_PRIOR_IDLE 150
 #define HRM_TAPPING_TERM 280
 
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 20
-
 
 &lt {
     quick-tap-ms = <QUICK_TAP_TERM>;
