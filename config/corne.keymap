@@ -11,13 +11,9 @@
 
 
 #define QUICK_TAP_TERM 175
-#define HRM_PRIOR_IDLE 150
-#define HRM_TAPPING_TERM 280
+#define PRIOR_IDLE 150
+#define TAPPING_TERM 250
 
-
-&lt {
-    quick-tap-ms = <QUICK_TAP_TERM>;
-};
 
 / {
     chosen {
@@ -29,8 +25,8 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";
-            require-prior-idle-ms = <HRM_PRIOR_IDLE>;
-            tapping-term-ms = <HRM_TAPPING_TERM>;
+            require-prior-idle-ms = <PRIOR_IDLE>;
+            tapping-term-ms = <TAPPING_TERM>;
             quick-tap-ms = <QUICK_TAP_TERM>;
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <
@@ -46,8 +42,8 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";
-            require-prior-idle-ms = <HRM_PRIOR_IDLE>;
-            tapping-term-ms = <HRM_TAPPING_TERM>;
+            require-prior-idle-ms = <PRIOR_IDLE>;
+            tapping-term-ms = <TAPPING_TERM>;
             quick-tap-ms = <QUICK_TAP_TERM>;
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <
@@ -57,6 +53,23 @@
                       30 31 32
             >; // List of keys on the left side of the keyboard
             hold-trigger-on-release;
+        };
+
+        slt: simple_layer_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <TAPPING_TERM>:
+            bindings = <&mo>, <&kp>;
+        };
+
+        rlt: repeating_layer_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <TAPPING_TERM>;
+            bindings = <&mo>, <&kp>;
+            quick-tap-ms = <QUICK_TAP_TERM>;
         };
 
         keymap {
@@ -69,7 +82,7 @@
     &kp Q        &kp W       &kp E       &kp R        &kp T    &kp Y &kp U         &kp I        &kp O       &kp P
     &hml LCTRL A &hml LALT S &hml LGUI D &hml LSHFT F &kp G    &kp H &hmr LSHFT J  &hmr LGUI K  &hmr LALT L &hmr LCTRL SQT
     &kp Z        &kp X       &kp C       &kp V        &kp B    &kp N &kp M         &kp COMMA    &kp DOT     &kp FSLH
-                          &lt 3 CAPS &lt 2 BSPC &lt 1 SPACE    &lt 4 RET &lt 5 TAB &lt 6 ESC
+                       &slt 3 CAPS &rlt 2 BSPC &rlt 1 SPACE    &rlt 4 RET &rlt 5 TAB &slt 6 ESC
                 >;
             };
 
