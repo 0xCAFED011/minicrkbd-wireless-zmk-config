@@ -76,17 +76,26 @@
             compatible = "zmk,keymap";
 
             // 0
-            default_layer {
-                display-name = "Base";
+            defaut_layer {
+                display-name = "QWERTY";
                 bindings = <
     &kp Q        &kp W       &kp E       &kp R        &kp T    &kp Y &kp U         &kp I        &kp O       &kp P
     &hml LCTRL A &hml LALT S &hml LGUI D &hml LSHFT F &kp G    &kp H &hmr LSHFT J  &hmr LGUI K  &hmr LALT L &hmr LCTRL SQT
     &kp Z        &kp X       &kp C       &kp V        &kp B    &kp N &kp M         &kp COMMA    &kp DOT     &kp FSLH
-                       &slt 3 CAPS &rlt 2 BSPC &rlt 1 SPACE    &rlt 4 RET &rlt 5 TAB &slt 6 ESC
+                       &slt 4 CAPS &rlt 3 BSPC &rlt 2 SPACE    &rlt 5 RET &rlt 6 TAB &slt 7 ESC
                 >;
             };
 
-            // 1
+            graphite_layer {
+                display-name = "Graphite";
+                bindings = <
+    &kp B        &kp L       &kp D       &kp W        &kp Z    &kp SQT &kp F        &kp O       &kp U       &pk J
+    &hml LCTRL N &hml LALT R &hml LGUI T &hml LSHFT S &kp G    &kp Y   &hmr LSHFT H &hmr LGUI A &hmr LALT E &hmr LCTRL I
+    &kp Q        &kp X       &kp M       &kp C        &kp V    &kp K   &kp P        &kp COMMA   &kp DOT     &kp FSLSH
+                                       &trans &trans &trans    &trans &trans &trans
+                >;
+            };
+
             number_layer {
                 display-name = "Number";
                 bindings = <
@@ -97,7 +106,6 @@
                 >;
             };
 
-            // 2
             navigation_layer {
                 display-name = "Navigation";
                 bindings = <
@@ -108,7 +116,6 @@
                 >;
             };
 
-            // 3
             mouse_layer {
                 display-name = "Mouse";
                 bindings = <
@@ -119,7 +126,6 @@
                 >;
             };
 
-            // 4
             media_layer {
                 display-name = "Media";
                 bindings = <
@@ -130,7 +136,6 @@
                 >;
             };
 
-            // 5
             function_layer {
                 display-name = "Function";
                 bindings = <
@@ -141,14 +146,13 @@
                 >;
             };
 
-            // 6
             keyboard_layer {
                 display-name = "Keyboard";
                 bindings = <
-    &none        &none        &none        &none        &none           &none &none &none &none &none
-    &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4    &none &none &none &none &none
-    &none        &none        &none        &none        &none           &none &none &none &none &none
-                                              &none &bt BT_CLR &none    &none &none &none
+    &none        &none        &none        &none        &none            &none &none &none &none &none
+    &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4     &none &none &none &none &none
+    &none        &none        &none        &none        &none            &none &none &none &none &none
+                                              &none &bt BT_CLR &tog 1    &none &none &none
                 >;
             };
         };
