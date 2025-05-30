@@ -10,16 +10,21 @@
 #include <dt-bindings/zmk/pointing.h>
 
 
+
 #define PLAIN_ROW(AL, BL, CL, DL, EL, AR, BR, CR, DR, ER) \
     &kp AL &kp BL &kp CL &kp DL &kp EL\
     &kp AR &kp BR &kp CR &kp DR &kp ER
+
 #define HMODS_ROW(AL, BL, CL, DL, EL, AR, BR, CR, DR, ER) \
     &hml LCTRL AL &hml LALT BL &hml LGUI CL &hml LSHFT DL &kp EL\
     &kp AR &hmr LSHFT BR &hmr LGUI CR &hmr LALT DR &hmr LCTRL ER
+
 #define BASE_THUMB_L &slt 4 CAPS &rlt 3 BSPC &rlt 2 SPACE
+
 #define BASE_THUMB_R &rlt 5 RET &rlt 6 TAB &slt 7 ESC
-#define BASE_MATRIX(TL1, TL2, TL3, TL4, TL5,  TR1, TR2, TR3, TR4, TR5,
-                    ML1, ML2, ML3, ML4, ML5,  MR1, MR2, MR3, MR4, MR5,
+
+#define BASE_MATRIX(TL1, TL2, TL3, TL4, TL5,  TR1, TR2, TR3, TR4, TR5,\
+                    ML1, ML2, ML3, ML4, ML5,  MR1, MR2, MR3, MR4, MR5,\
                     BL1, BL2, BL3, BL4, BL5,  BR1, BR2, BR3, BR4, BR5) \
     PLAIN_ROW(TL1, TL2, TL3, TL4, TL5, TR1, TR2, TR3, TR4, TR5)\
     HMODS_ROW(ML1, ML2, ML3, ML4, ML5, MR1, MR2, MR3, MR4, MR5)\
@@ -27,12 +32,19 @@
     BASE_THUMB_L BASE_THUMB_R
 
 #define BLANK_HALF_ROW  &none &none &none &none  &none
+
 #define PLAIN_HALF_ROW(A, B, C, D, E) \
     &kp A &kp B &kp C &kp D &kp E
+
 #define MOD_HALF_ROW_L &kp LCTRL &kp LALT &kp LGUI &kp LSHFT &none
+
 #define MOD_HALF_ROW_R &none &kp LSHFT &kp LGUI &kp LALT &kp LCTRL
+
 #define BLANK_THUMB &none &none &none
 
+
+
+/* Constants */
 #define QUICK_TAP_TERM 175
 #define PRIOR_IDLE 150
 #define TAPPING_TERM 250
