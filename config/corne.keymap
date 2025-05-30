@@ -10,6 +10,15 @@
 #include <dt-bindings/zmk/pointing.h>
 
 
+#define PLAIN_ROW(AL, BL, CL, DL, EL, AR, BR, CR, DR, ER) \
+    &kp AL &kp BL &kp CL &kp DL &kp EL\
+    &kp AR &kp BR &kp CR &kp DR &kp ER
+#define HMODS_ROW(AL, BL, CL, DL, EL, AR, BR, CR, DR, ER) \
+    &hml LCTRL AL &hml LALT BL &hml LGUI CL &hml LSHFT DL &kp EL\
+    &kp AR &hmr LSHFT BR &hmr LGUI CR &hmr LALT DR &hmr LCTRL ER
+#define BASE_THUMB_L &slt 4 CAPS &rlt 3 BSPC &rlt 2 SPACE
+#define BASE_THUMB_R &rlt 5 RET &rlt 6 TAB &slt 7 ESC
+
 #define QUICK_TAP_TERM 175
 #define PRIOR_IDLE 150
 #define TAPPING_TERM 250
@@ -78,10 +87,10 @@
             defaut_layer {
                 display-name = "QWERTY";
                 bindings = <
-    &kp Q        &kp W       &kp E       &kp R        &kp T    &kp Y &kp U         &kp I        &kp O       &kp P
-    &hml LCTRL A &hml LALT S &hml LGUI D &hml LSHFT F &kp G    &kp H &hmr LSHFT J  &hmr LGUI K  &hmr LALT L &hmr LCTRL SQT
-    &kp Z        &kp X       &kp C       &kp V        &kp B    &kp N &kp M         &kp COMMA    &kp DOT     &kp FSLH
-                       &slt 4 CAPS &rlt 3 BSPC &rlt 2 SPACE    &rlt 5 RET &rlt 6 TAB &slt 7 ESC
+    PLAIN_ROW(Q, W, E, R, T,    Y, U, I,     O,   P)
+    HMODS_ROW(A, S, D, F, G,    H, J, K,     L,   SQT)
+    PLAIN_ROW(Z, X, C, V, B,    N, M, COMMA, DOT, FSLH)
+               BASE_THUMB_L    BASE_THUMB_R
                 >;
             };
 
