@@ -146,7 +146,7 @@
                 bindings = <
                     &none      &kp C_BRI_DN &kp C_BRI_UP &none      &none    BLANK_HALF_ROW
                     &kp C_PREV &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT &none    MOD_HALF_ROW_R
-                    &none      &none        &none        &none      &none    BLANK_HALF_ROWMOD_HALF_ROW_R
+                    &none      &none        &none        &none      &none    BLANK_HALF_ROW
                                                 &kp C_MUTE &kp C_PP &none    BLANK_THUMB
                 >;
             };
