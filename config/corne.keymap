@@ -18,6 +18,13 @@
     &kp AR &hmr LSHFT BR &hmr LGUI CR &hmr LALT DR &hmr LCTRL ER
 #define BASE_THUMB_L &slt 4 CAPS &rlt 3 BSPC &rlt 2 SPACE
 #define BASE_THUMB_R &rlt 5 RET &rlt 6 TAB &slt 7 ESC
+#define BASE_MATRIX(TL1, TL2, TL3, TL4, TL5,  TR1, TR2, TR3, TR4, TR5,
+                    ML1, ML2, ML3, ML4, ML5,  MR1, MR2, MR3, MR4, MR5,
+                    BL1, BL2, BL3, BL4, BL5,  BR1, BR2, BR3, BR4, BR5) \
+    PLAIN_ROW(TL1, TL2, TL3, TL4, TL5, TR1, TR2, TR3, TR4, TR5)\
+    HMODS_ROW(ML1, ML2, ML3, ML4, ML5, MR1, MR2, MR3, MR4, MR5)\
+    PLAIN_ROW(BL1, BL2, BL3, BL4, BL5, BR1, BR2, BR3, BR4, BR5)\
+    BASE_THUMB_L BASE_THUMB_R
 
 #define BLANK_HALF_ROW  &none &none &none &none  &none
 #define PLAIN_HALF_ROW(A, B, C, D, E) \
@@ -94,10 +101,9 @@
             defaut_layer {
                 display-name = "QWERTY";
                 bindings = <
-                    PLAIN_ROW(Q, W, E, R, T,    Y, U, I,     O,   P)
-                    HMODS_ROW(A, S, D, F, G,    H, J, K,     L,   SQT)
-                    PLAIN_ROW(Z, X, C, V, B,    N, M, COMMA, DOT, FSLH)
-                                BASE_THUMB_L    BASE_THUMB_R
+                    BASE_MATRIX(Q, W, E, R, T,    Y, U, I,     O,   P,
+                                A, S, D, F, G,    H, J, K,     L,   SQT,
+                                Z, X, C, V, B,    N, M, COMMA, DOT, FSLH)
                 >;
             };
 
