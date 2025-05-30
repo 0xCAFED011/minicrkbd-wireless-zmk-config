@@ -19,6 +19,13 @@
 #define BASE_THUMB_L &slt 4 CAPS &rlt 3 BSPC &rlt 2 SPACE
 #define BASE_THUMB_R &rlt 5 RET &rlt 6 TAB &slt 7 ESC
 
+#define BLANK_HALF_ROW  &none &none &none &none  &none
+#define PLAIN_HALF_ROW(A, B, C, D, E) \
+    &kp A &kp B &kp C &kp D &kp E
+#define MOD_HALF_ROW_L &kp LCTRL &kp LALT &kp LGUI &kp LSHFT &none
+#define MOD_HALF_ROW_R &none &kp LSHFT &kp LGUI &kp LALT &kp LCTRL
+#define BLANK_THUMB &none &none &none
+
 #define QUICK_TAP_TERM 175
 #define PRIOR_IDLE 150
 #define TAPPING_TERM 250
@@ -87,80 +94,80 @@
             defaut_layer {
                 display-name = "QWERTY";
                 bindings = <
-    PLAIN_ROW(Q, W, E, R, T,    Y, U, I,     O,   P)
-    HMODS_ROW(A, S, D, F, G,    H, J, K,     L,   SQT)
-    PLAIN_ROW(Z, X, C, V, B,    N, M, COMMA, DOT, FSLH)
-               BASE_THUMB_L    BASE_THUMB_R
+                    PLAIN_ROW(Q, W, E, R, T,    Y, U, I,     O,   P)
+                    HMODS_ROW(A, S, D, F, G,    H, J, K,     L,   SQT)
+                    PLAIN_ROW(Z, X, C, V, B,    N, M, COMMA, DOT, FSLH)
+                                BASE_THUMB_L    BASE_THUMB_R
                 >;
             };
 
             graphite_layer {
                 display-name = "Graphite";
                 bindings = <
-    &kp B        &kp L       &kp D       &kp W        &kp Z    &kp SQT &kp F        &kp O       &kp U       &kp J
-    &hml LCTRL N &hml LALT R &hml LGUI T &hml LSHFT S &kp G    &kp Y   &hmr LSHFT H &hmr LGUI A &hmr LALT E &hmr LCTRL I
-    &kp Q        &kp X       &kp M       &kp C        &kp V    &kp K   &kp P        &kp COMMA   &kp DOT     &kp FSLH
-                                       &trans &trans &trans    &trans &trans &trans
+                    PLAIN_ROW(B, L, D, W, Z,    SQT, F, O,     U,   J)
+                    HMODS_ROW(N, R, T, S, G,    Y,   H, A,     E,   I)
+                    PLAIN_ROW(Q, X, M, C, V,    K,   P, COMMA, DOT, FSLH)
+                                BASE_THUMB_L    BASE_THUMB_R
                 >;
             };
 
             number_layer {
                 display-name = "Number";
                 bindings = <
-    &none     &none    &none    &none     &none    &kp LBKT &kp N7 &kp N8 &kp N9 &kp RBKT
-    &kp LCTRL &kp LALT &kp LGUI &kp LSHFT &none    &kp SEMI &kp N4 &kp N5 &kp N6 &kp EQUAL
-    &none     &none    &none    &none     &none    &kp BSLH &kp N1 &kp N2 &kp N3 &kp GRAVE
-                              &none &none &none    &kp MINUS &kp N0 &none
+                    BLANK_HALF_ROW    PLAIN_HALF_ROW(LBKT, N7, N8, N9, RBKT)
+                    MOD_HALF_ROW_L    PLAIN_HALF_ROW(SEMI, N4, N5, N6, EQUAL)
+                    BLANK_HALF_ROW    PLAIN_HALF_ROW(BSLH, N1, N2, N3, GRAVE)
+                       BLANK_THUMB    &kp MINUS &kp N0 &none
                 >;
             };
 
             navigation_layer {
                 display-name = "Navigation";
                 bindings = <
-    &none     &none    &none    &none     &none    &kp HOME &kp PG_DN &kp PG_UP &kp END   &none
-    &kp LCTRL &kp LALT &kp LGUI &kp LSHFT &none    &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &none
-    &none     &none    &none    &none     &none    &none    &none     &none     &none     &none
-                              &none &none &none    &none &none &none
+                    BLANK_HALF_ROW    &kp HOME &kp PG_DN &kp PG_UP &kp END   &none
+                    MOD_HALF_ROW_L    &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &none
+                    BLANK_HALF_ROW    &none    &none     &none     &none     &none
+                       BLANK_THUMB    BLANK_THUMB
                 >;
             };
 
             mouse_layer {
                 display-name = "Mouse";
                 bindings = <
-    &none     &none    &none    &none     &none    &msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_UP &msc SCRL_RIGHT &none
-    &kp LCTRL &kp LALT &kp LGUI &kp LSHFT &none    &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT &none
-    &none     &none    &none    &none     &none    &none          &none          &none        &none           &none
-                              &none &none &none    &mkp LCLK &mkp MCLK &mkp RCLK
+                    BLANK_HALF_ROW    &msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_UP &msc SCRL_RIGHT &none
+                    MOD_HALF_ROW_L    &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT &none
+                    BLANK_HALF_ROW    &none          &none          &none        &none           &none
+                       BLANK_THUMB    &mkp LCLK &mkp MCLK &mkp RCLK
                 >;
             };
 
             media_layer {
                 display-name = "Media";
                 bindings = <
-    &none      &kp C_BRI_DN &kp C_BRI_UP &none      &none    &none &none     &none    &none    &none
-    &kp C_PREV &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT &none    &none &kp LSHFT &kp LGUI &kp LALT &kp LCTRL
-    &none      &none        &none        &none      &none    &none &none     &none    &none    &none
-                                &kp C_MUTE &kp C_PP &none    &none &none &none
+                    &none      &kp C_BRI_DN &kp C_BRI_UP &none      &none    BLANK_HALF_ROW
+                    &kp C_PREV &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT &none    MOD_HALF_ROW_R
+                    &none      &none        &none        &none      &none    BLANK_HALF_ROWMOD_HALF_ROW_R
+                                                &kp C_MUTE &kp C_PP &none    BLANK_THUMB
                 >;
             };
 
             function_layer {
                 display-name = "Function";
                 bindings = <
-    &kp F9 &kp F10 &kp F11 &kp F12 &none    &none &none     &none    &none    &none
-    &kp F5 &kp F6  &kp F7  &kp F8  &none    &none &kp LSHFT &kp LGUI &kp LALT &kp LCTRL
-    &kp F1 &kp F2  &kp F3  &kp F4  &none    &none &none     &none    &none    &none
-                       &none &none &none    &none &none &none
+                    &kp F9 &kp F10 &kp F11 &kp F12 &none    BLANK_HALF_ROW
+                    &kp F5 &kp F6  &kp F7  &kp F8  &none    MOD_HALF_ROW_R
+                    &kp F1 &kp F2  &kp F3  &kp F4  &none    BLANK_HALF_ROW
+                                             BLANK_THUMB    BLANK_THUMB
                 >;
             };
 
             keyboard_layer {
                 display-name = "Keyboard";
                 bindings = <
-    &none        &none        &none        &none        &none            &none &none &none &none &none
-    &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4     &none &none &none &none &none
-    &none        &none        &none        &none        &none            &none &none &none &none &none
-                                              &none &bt BT_CLR &tog 1    &none &none &none
+                    &none        &none        &none        &none        &none            BLANK_HALF_ROW
+                    &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4     BLANK_HALF_ROW
+                    &none        &none        &none        &none        &none            BLANK_HALF_ROW
+                                                              &none &bt BT_CLR &tog 1    BLANK_THUMB
                 >;
             };
         };
